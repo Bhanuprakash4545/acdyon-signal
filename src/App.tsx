@@ -1,19 +1,25 @@
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
-    <main>
-      <div className="container">
-        <section>
-          <p>Signal</p>
+    <>
+      <Navbar />
 
-          <h1>Make better decisions by making trade-offs visible.</h1>
+      <main>
+        <div className="container">
+          <section>
+            <p>Signal</p>
 
-          <p>
-            Bring evidence, priorities, and options into one focused decision
-            workspace.
-          </p>
-        </section>
-      </div>
-    </main>
+            <h1>Make better decisions by making trade-offs visible.</h1>
+
+            <p>
+              Bring evidence, priorities, and options into one focused decision
+              workspace.
+            </p>
+          </section>
+        </div>
+      </main>
+    </>
   );
 }
 
