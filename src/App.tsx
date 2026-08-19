@@ -45,7 +45,7 @@ function App() {
           ←
         </button>
 
-        <DecisionBuilder onCancel={closeBuilder} />
+        <DecisionBuilder />
       </main>
     );
   }
@@ -62,6 +62,7 @@ function App() {
         <section className="hero">
           <div className="container">
             <div className="hero__layout">
+
               {/* LEFT — HERO CONTENT */}
 
               <div className="hero__content">
@@ -95,6 +96,7 @@ function App() {
               <div className="hero__preview">
                 <DecisionPreview />
               </div>
+
             </div>
           </div>
         </section>

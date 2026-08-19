@@ -1,11 +1,7 @@
 import { useState } from "react";
 import "./DecisionBuilder.css";
 
-type DecisionBuilderProps = {
-  onCancel: () => void;
-};
-
-function DecisionBuilder({ onCancel }: DecisionBuilderProps) {
+function DecisionBuilder() {
   const [question, setQuestion] = useState("");
   const [context, setContext] = useState("");
 
@@ -97,8 +93,6 @@ function DecisionBuilder({ onCancel }: DecisionBuilderProps) {
       <div className="container">
 
         <div className="decision-builder__intro">
-        
-
           <span>CREATE A DECISION</span>
 
           <h1>
@@ -298,7 +292,6 @@ function DecisionBuilder({ onCancel }: DecisionBuilderProps) {
             </div>
 
             <div className="builder-review__actions">
-
               <button
                 type="button"
                 className="builder-submit"
