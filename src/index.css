@@ -35,6 +35,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -45,6 +49,10 @@ img {
   max-width: 100%;
 }
 
+/* =================================
+   CONTAINER
+================================= */
+
 .container {
   width: min(
     calc(100% - (var(--page-padding) * 2)),
@@ -54,14 +62,68 @@ img {
   margin-inline: auto;
 }
 
-/* Accessibility */
+/* =================================
+   CREATE DECISION PAGE
+================================= */
 
-:focus-visible {
+.builder-page {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-16);
+}
+
+.builder-page__back {
+  position: fixed;
+
+  top: 2rem;
+  right: 2.5rem;
+
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background: var(--color-surface);
+  color: var(--color-text);
+
+  font-size: 1.35rem;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.builder-page__back:hover {
+  transform: translateX(-2px);
+
+  border-color: var(--color-border-strong);
+
+  box-shadow: var(--shadow-md);
+}
+
+.builder-page__back:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
-/* Reduced motion */
+/* =================================
+   REDUCED MOTION
+================================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -77,10 +139,24 @@ img {
   }
 }
 
-/* Mobile */
+/* =================================
+   MOBILE
+================================= */
 
 @media (max-width: 640px) {
   :root {
     --page-padding: 1rem;
+  }
+
+  .builder-page {
+    padding-top: var(--space-8);
+  }
+
+  .builder-page__back {
+    top: 1rem;
+    right: 1rem;
+
+    width: 40px;
+    height: 40px;
   }
 }
