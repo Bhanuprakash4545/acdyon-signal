@@ -29,9 +29,9 @@ function App() {
     });
   };
 
-  /* =================================
-     CREATE DECISION PAGE
-  ================================= */
+  /*
+   * CREATE DECISION PAGE
+   */
 
   if (showBuilder) {
     return (
@@ -40,33 +40,28 @@ function App() {
           type="button"
           className="builder-page__back"
           onClick={closeBuilder}
-          aria-label="Go back"
+          aria-label="Go back to Signal"
         >
           ←
         </button>
 
-        <DecisionBuilder />
+        <DecisionBuilder onCancel={closeBuilder} />
       </main>
     );
   }
 
-  /* =================================
-     HOME PAGE
-  ================================= */
+  /*
+   * HOME PAGE
+   */
 
   return (
     <>
       <Navbar onCreateDecision={openBuilder} />
 
       <main>
-        {/* =============================
-            HERO
-        ============================= */}
-
-        <div className="container">
-          <section className="hero">
+        <section className="hero">
+          <div className="container">
             <div className="hero__layout">
-
               {/* LEFT — HERO CONTENT */}
 
               <div className="hero__content">
@@ -75,13 +70,13 @@ function App() {
                 </p>
 
                 <h1>
-                  Make better decisions by making
-                  trade-offs visible.
+                  Make better decisions by making trade-offs
+                  visible.
                 </h1>
 
                 <p className="hero__description">
-                  Bring evidence, priorities, and options
-                  into one focused decision workspace.
+                  Bring evidence, priorities, and options into one
+                  focused decision workspace.
                 </p>
 
                 <button
@@ -91,25 +86,20 @@ function App() {
                 >
                   <span>Create a decision</span>
 
-                  <span aria-hidden="true">
-                    →
-                  </span>
+                  <span aria-hidden="true">→</span>
                 </button>
               </div>
 
-              {/* RIGHT — PRODUCT PREVIEW */}
+              {/* RIGHT — INTERACTIVE DEMO */}
 
               <div className="hero__preview">
                 <DecisionPreview />
               </div>
-
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
-        {/* =============================
-            HOW SIGNAL WORKS
-        ============================= */}
+        {/* HOW SIGNAL WORKS */}
 
         <HowItWorks />
       </main>

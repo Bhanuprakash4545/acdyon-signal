@@ -1,167 +1,390 @@
-/* =================================
-   HOW SIGNAL WORKS
-================================= */
-
 .how-it-works {
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-24);
+  width: 100%;
+  min-height: 100vh;
 
-  border-top: 1px solid var(--color-border);
+  background: var(--color-background);
+
+  box-sizing: border-box;
+
+  padding-top: 5.5rem;
+  padding-bottom: 1.5rem;
 }
 
-.how-it-works__header {
-  max-width: 720px;
+/* --------------------------------
+   INTRO
+-------------------------------- */
+
+.how-it-works__intro {
+  max-width: 1050px;
 }
 
 .how-it-works__eyebrow {
-  margin: 0 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin: 0 0 0.9rem;
 
   color: var(--color-accent);
 
-  font-size: var(--text-xs);
-  font-weight: var(--weight-semibold);
+  font-size: 0.72rem;
+  line-height: 1;
+  font-weight: 700;
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.how-it-works__header h2 {
-  max-width: 700px;
+.how-it-works__eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-accent);
+}
+
+.how-it-works__intro h2 {
+  max-width: 1000px;
 
   margin: 0;
 
   color: var(--color-text);
 
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  font-weight: var(--weight-semibold);
+  font-size: clamp(2.7rem, 4.2vw, 4rem);
+  line-height: 0.96;
+  font-weight: 600;
 
-  line-height: 1.02;
-
-  letter-spacing: -0.04em;
+  letter-spacing: -0.055em;
 }
 
-.how-it-works__header > p:last-child {
-  max-width: 620px;
+.how-it-works__description {
+  max-width: 900px;
 
-  margin: var(--space-6) 0 0;
+  margin: 0.9rem 0 0;
 
   color: var(--color-text-secondary);
 
-  font-size: var(--text-lg);
-  line-height: var(--leading-relaxed);
+  font-size: 0.98rem;
+  line-height: 1.5;
 }
 
-/* =================================
-   STEPS
-================================= */
+/* --------------------------------
+   CARDS
+-------------------------------- */
 
 .how-it-works__steps {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: var(--space-8);
+  width: 100%;
 
-  margin-top: var(--space-16);
+  margin-top: 2.25rem;
+
+  border: 1px solid var(--color-border);
 }
 
-.how-it-works__step {
-  display: grid;
+.how-step {
+  min-height: 130px;
 
-  grid-template-columns: auto 1fr;
+  padding: 1.05rem 1.5rem 1.1rem;
 
-  align-items: start;
+  background: var(--color-background);
 
-  gap: var(--space-5);
+  box-sizing: border-box;
 
-  padding-top: var(--space-5);
-
-  border-top: 1px solid var(--color-border);
+  transition: background 160ms ease;
 }
 
-.how-it-works__number {
+.how-step:hover {
+  background: var(--color-surface);
+}
+
+.how-step + .how-step {
+  border-left: 1px solid var(--color-border);
+}
+
+/* --------------------------------
+   NUMBER
+-------------------------------- */
+
+.how-step__number {
+  display: block;
+
   color: var(--color-text-muted);
 
-  font-size: var(--text-xs);
-  font-weight: var(--weight-semibold);
+  font-size: 0.7rem;
+  line-height: 1;
 
-  letter-spacing: 0.06em;
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
 }
 
-.how-it-works__step h3 {
+/* --------------------------------
+   CARD CONTENT
+-------------------------------- */
+
+.how-step__content {
+  margin-top: 1.8rem;
+}
+
+.how-step h3 {
   margin: 0;
 
   color: var(--color-text);
 
-  font-size: var(--text-lg);
-  font-weight: var(--weight-semibold);
+  font-size: 1.12rem;
+  line-height: 1.25;
 
-  line-height: var(--leading-snug);
+  font-weight: 600;
+
+  letter-spacing: -0.025em;
 }
 
-.how-it-works__step p {
-  max-width: 320px;
+.how-step p {
+  max-width: 380px;
 
-  margin: var(--space-3) 0 0;
+  margin: 0.5rem 0 0;
 
   color: var(--color-text-secondary);
 
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
-/* =================================
+/* --------------------------------
+   CLOSING STATEMENT
+-------------------------------- */
+
+.how-it-works__statement {
+  width: 100%;
+  max-width: none;
+
+  margin-top: 2rem;
+}
+
+.how-it-works__statement p {
+  width: 100%;
+
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: clamp(1.2rem, 1.65vw, 1.5rem);
+
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: -0.025em;
+
+  white-space: nowrap;
+}
+
+/* --------------------------------
+   FOOTER
+-------------------------------- */
+
+.how-it-works__footer {
+  width: 100%;
+
+  /*
+    Comfortable breathing room between
+    the closing statement and footer.
+  */
+  margin-top: 3.25rem;
+
+  padding-top: 1.35rem;
+
+  border-top: 1px solid var(--color-border);
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  box-sizing: border-box;
+}
+
+.how-it-works__footer-brand {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.how-it-works__footer-description {
+  margin: 0.45rem 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.8rem;
+
+  line-height: 1.4;
+}
+
+.how-it-works__footer-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.75rem;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.78rem;
+}
+
+/* --------------------------------
+   DESKTOP
+-------------------------------- */
+
+@media (min-width: 901px) {
+  .how-it-works {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .how-it-works > .container {
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*
+    Keep the footer at a controlled distance
+    from the closing statement.
+  */
+
+  .how-it-works__footer {
+    margin-top: 3.25rem;
+  }
+}
+
+/* --------------------------------
    TABLET
-================================= */
+-------------------------------- */
 
 @media (max-width: 900px) {
   .how-it-works {
-    padding-top: var(--space-16);
-    padding-bottom: var(--space-20);
+    min-height: auto;
+
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
   }
 
   .how-it-works__steps {
     grid-template-columns: 1fr;
-
-    gap: 0;
-
-    margin-top: var(--space-12);
   }
 
-  .how-it-works__step {
-    padding-block: var(--space-6);
+  .how-step {
+    min-height: 130px;
   }
 
-  .how-it-works__step p {
-    max-width: 560px;
+  .how-step + .how-step {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+
+  .how-it-works__statement p {
+    white-space: normal;
+  }
+
+  .how-it-works__footer {
+    margin-top: 2.5rem;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .how-it-works__footer-meta {
+    gap: 1rem;
   }
 }
 
-/* =================================
+/* --------------------------------
    MOBILE
-================================= */
+-------------------------------- */
 
 @media (max-width: 640px) {
   .how-it-works {
-    padding-top: var(--space-12);
-    padding-bottom: var(--space-16);
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
   }
 
-  .how-it-works__header h2 {
-    font-size: clamp(2.3rem, 11vw, 3.2rem);
+  .how-it-works__eyebrow {
+    margin-bottom: 0.9rem;
+
+    font-size: 0.68rem;
   }
 
-  .how-it-works__header > p:last-child {
-    margin-top: var(--space-5);
+  .how-it-works__intro h2 {
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
 
-    font-size: var(--text-base);
+    line-height: 0.98;
+  }
+
+  .how-it-works__description {
+    margin-top: 1rem;
+
+    font-size: 0.95rem;
   }
 
   .how-it-works__steps {
-    margin-top: var(--space-8);
+    margin-top: 2rem;
   }
 
-  .how-it-works__step {
-    gap: var(--space-4);
+  .how-step {
+    min-height: 125px;
+
+    padding: 1.1rem 1.2rem;
+  }
+
+  .how-step__content {
+    margin-top: 1.7rem;
+  }
+
+  .how-step h3 {
+    font-size: 1.1rem;
+  }
+
+  .how-step p {
+    margin-top: 0.5rem;
+
+    font-size: 0.9rem;
+  }
+
+  .how-it-works__statement {
+    margin-top: 2rem;
+  }
+
+  .how-it-works__statement p {
+    font-size: 1.3rem;
+
+    white-space: normal;
+  }
+
+  .how-it-works__footer {
+    margin-top: 2.25rem;
+
+    padding-top: 1.25rem;
   }
 }

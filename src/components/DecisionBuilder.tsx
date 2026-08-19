@@ -1,17 +1,21 @@
 import { useState } from "react";
 import "./DecisionBuilder.css";
 
-function DecisionBuilder() {
+type DecisionBuilderProps = {
+  onCancel: () => void;
+};
+
+function DecisionBuilder({ onCancel }: DecisionBuilderProps) {
   const [question, setQuestion] = useState("");
   const [context, setContext] = useState("");
 
-  const [options, setOptions] = useState([
+  const [options, setOptions] = useState<string[]>([
     "",
     "",
     "",
   ]);
 
-  const [criteria, setCriteria] = useState([
+  const [criteria, setCriteria] = useState<string[]>([
     "",
     "",
     "",
@@ -93,6 +97,14 @@ function DecisionBuilder() {
       <div className="container">
 
         <div className="decision-builder__intro">
+          <button
+            type="button"
+            className="builder-cancel"
+            onClick={onCancel}
+          >
+            ← Back
+          </button>
+
           <span>CREATE A DECISION</span>
 
           <h1>
@@ -291,14 +303,24 @@ function DecisionBuilder() {
               </p>
             </div>
 
-            <button
-              type="button"
-              className="builder-submit"
-              disabled={!isValid}
-              onClick={handleSubmit}
-            >
-              Create decision →
-            </button>
+            <div className="builder-review__actions">
+              <button
+                type="button"
+                className="builder-cancel"
+                onClick={onCancel}
+              >
+                Cancel
+              </button>
+
+              <button
+                type="button"
+                className="builder-submit"
+                disabled={!isValid}
+                onClick={handleSubmit}
+              >
+                Create decision →
+              </button>
+            </div>
           </section>
 
         </div>
