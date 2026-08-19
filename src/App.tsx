@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Hero from "./sections/Hero";
 
 function App() {
   return (
@@ -6,18 +7,7 @@ function App() {
       <Navbar />
 
       <main>
-        <div className="container">
-          <section>
-            <p>Signal</p>
-
-            <h1>Make better decisions by making trade-offs visible.</h1>
-
-            <p>
-              Bring evidence, priorities, and options into one focused decision
-              workspace.
-            </p>
-          </section>
-        </div>
+        <Hero />
       </main>
     </>
   );
