@@ -95,8 +95,6 @@ This example demonstrates how Signal makes trade-offs visible instead of present
 
 ---
 
----
-
 ## How It Works
 
 ### 1. Frame the Decision
@@ -289,17 +287,17 @@ Make sure you have the following installed:
 git clone https://github.com/Bhanuprakash4545/acdyon-signal.git
 ```
 ### Navigate into the project
-
+```bash
 cd acdyon-signal
-
+```
 ### Install dependencies
-
+```bash
 npm install
-
+```
 ### Start the development server
-
+```bash
 npm run dev
-
+```
 
 The application will be available at the local development URL shown in the terminal.
 
@@ -308,12 +306,13 @@ The application will be available at the local development URL shown in the term
 ## Production Build
 
 To create a production build:
-
+```bash
 npm run build
-
+```
 The production files are generated inside:
 
 dist/
 To preview the production build locally:
+```bash
 npm run preview
-
+```
