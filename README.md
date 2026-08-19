@@ -312,6 +312,7 @@ npm run build
 The production files are generated inside:
 
 dist/
+
 To preview the production build locally:
 ```bash
 npm run preview
