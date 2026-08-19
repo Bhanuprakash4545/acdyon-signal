@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import DecisionPreview from "./components/DecisionPreview";
 import DecisionBuilder from "./components/DecisionBuilder";
+import HowItWorks from "./sections/HowItWorks";
 
 import "./sections/Hero.css";
 import "./index.css";
@@ -28,6 +29,10 @@ function App() {
     });
   };
 
+  /* =================================
+     CREATE DECISION PAGE
+  ================================= */
+
   if (showBuilder) {
     return (
       <main className="builder-page">
@@ -45,14 +50,24 @@ function App() {
     );
   }
 
+  /* =================================
+     HOME PAGE
+  ================================= */
+
   return (
     <>
       <Navbar onCreateDecision={openBuilder} />
 
       <main>
+        {/* =============================
+            HERO
+        ============================= */}
+
         <div className="container">
           <section className="hero">
             <div className="hero__layout">
+
+              {/* LEFT — HERO CONTENT */}
 
               <div className="hero__content">
                 <p className="hero__eyebrow">
@@ -75,9 +90,14 @@ function App() {
                   onClick={openBuilder}
                 >
                   <span>Create a decision</span>
-                  <span aria-hidden="true">→</span>
+
+                  <span aria-hidden="true">
+                    →
+                  </span>
                 </button>
               </div>
+
+              {/* RIGHT — PRODUCT PREVIEW */}
 
               <div className="hero__preview">
                 <DecisionPreview />
@@ -86,6 +106,12 @@ function App() {
             </div>
           </section>
         </div>
+
+        {/* =============================
+            HOW SIGNAL WORKS
+        ============================= */}
+
+        <HowItWorks />
       </main>
     </>
   );
