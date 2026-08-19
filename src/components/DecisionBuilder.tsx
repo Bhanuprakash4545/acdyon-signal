@@ -97,13 +97,7 @@ function DecisionBuilder({ onCancel }: DecisionBuilderProps) {
       <div className="container">
 
         <div className="decision-builder__intro">
-          <button
-            type="button"
-            className="builder-cancel"
-            onClick={onCancel}
-          >
-            ← Back
-          </button>
+        
 
           <span>CREATE A DECISION</span>
 
