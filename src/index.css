@@ -25,7 +25,9 @@ body {
 }
 
 button,
-input {
+input,
+textarea,
+select {
   font: inherit;
 }
 
@@ -43,7 +45,6 @@ img {
   max-width: 100%;
 }
 
-/* ADD IT HERE */
 .container {
   width: min(
     calc(100% - (var(--page-padding) * 2)),
@@ -53,7 +54,15 @@ img {
   margin-inline: auto;
 }
 
+/* Accessibility */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
 /* Reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -69,29 +78,9 @@ img {
 }
 
 /* Mobile */
+
 @media (max-width: 640px) {
   :root {
     --page-padding: 1rem;
   }
-}
-
-/* Temporary typography test */
-section {
-  padding-block: var(--space-32);
-}
-
-h1 {
-  max-width: 800px;
-  margin: var(--space-4) 0;
-
-  font-size: var(--text-5xl);
-  font-weight: var(--weight-semibold);
-  line-height: var(--leading-tight);
-  letter-spacing: -0.04em;
-}
-
-p {
-  color: var(--color-text-secondary);
-  font-size: var(--text-lg);
-  line-height: var(--leading-relaxed);
 }

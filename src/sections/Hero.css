@@ -1,0 +1,155 @@
+.hero {
+  padding-top: clamp(2.5rem, 4vw, 4rem);
+  padding-bottom: clamp(4rem, 7vw, 6rem);
+}
+
+.hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(3rem, 5vw, 5rem);
+}
+
+.hero__content {
+  max-width: 720px;
+}
+
+.hero__eyebrow {
+  margin: 0 0 var(--space-4);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+}
+
+.hero__title {
+  max-width: 760px;
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: clamp(3.25rem, 4.7vw, 5rem);
+  font-weight: var(--weight-semibold);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.hero__description {
+  max-width: 600px;
+  margin: var(--space-6) 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.hero__actions {
+  margin-top: var(--space-8);
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius-md);
+
+  background: var(--color-text);
+  color: var(--color-background);
+
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    opacity var(--duration-fast) var(--ease-standard);
+}
+
+.hero__cta:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.hero__cta:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.hero__product {
+  min-width: 0;
+}
+
+.hero__product .decision-preview {
+  margin-top: 0;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .hero__content {
+    max-width: 800px;
+  }
+
+  .hero__product {
+    max-width: 900px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: var(--space-12);
+  }
+
+  .hero__layout {
+    gap: var(--space-10);
+  }
+
+  .hero__eyebrow {
+    margin-bottom: var(--space-3);
+
+    font-size: var(--text-base);
+  }
+
+  .hero__title {
+    font-size: clamp(3rem, 13vw, 4rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  .hero__description {
+    margin-top: var(--space-5);
+
+    font-size: var(--text-base);
+  }
+
+  .hero__actions {
+    margin-top: var(--space-6);
+  }
+
+  .hero__cta {
+    width: 100%;
+  }
+
+  .hero__product {
+    width: 100%;
+  }
+}
