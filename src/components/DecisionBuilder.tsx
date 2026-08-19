@@ -298,13 +298,6 @@ function DecisionBuilder({ onCancel }: DecisionBuilderProps) {
             </div>
 
             <div className="builder-review__actions">
-              <button
-                type="button"
-                className="builder-cancel"
-                onClick={onCancel}
-              >
-                Cancel
-              </button>
 
               <button
                 type="button"
